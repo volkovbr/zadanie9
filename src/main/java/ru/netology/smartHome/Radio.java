@@ -1,8 +1,8 @@
 package ru.netology.smartHome;
 
 public class Radio {
-    public int numberStation;
-    public int volume;
+    private int numberStation;
+    private int volume;
 
     public int getNumberStation() {
         return numberStation;
@@ -10,6 +10,10 @@ public class Radio {
 
     public int getVolume() {
         return volume;
+    }
+
+    public void setVolume(int newVolume) {
+        volume = newVolume;
     }
 
     public void setNumberStation(int newNumberStation) {
