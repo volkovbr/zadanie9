@@ -1,8 +1,17 @@
 package ru.netology.smartHome;
 
 public class Radio {
+    public int quantityStation = 10;
+    public int maxVolume =100;
     public int numberStation;
     public int volume;
+
+    public Radio(int quantityStation) {
+        this.quantityStation = quantityStation;
+    }
+
+    public Radio() {
+    }
 
     public int getNumberStation() {
         return numberStation;
@@ -13,7 +22,7 @@ public class Radio {
     }
 
     public void setNumberStation(int newNumberStation) {
-        if (newNumberStation > 9) {
+        if (newNumberStation > quantityStation-1) {
             return;
         }
         if (newNumberStation < 0) {
@@ -23,7 +32,7 @@ public class Radio {
     }
 
     public void nextNumberStation() {
-        if (numberStation < 9) {
+        if (numberStation < quantityStation-1) {
             numberStation = numberStation + 1;
         } else {
             numberStation = 0;
@@ -34,12 +43,12 @@ public class Radio {
         if (numberStation > 0) {
             numberStation = numberStation - 1;
         } else {
-            numberStation = 9;
+            numberStation = quantityStation-1;
         }
     }
 
     public void increaseVolume() {
-        if (volume < 10) {
+        if (volume < maxVolume) {
             volume = volume + 1;
         }
     }
